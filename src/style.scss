@@ -2,14 +2,21 @@
     margin: 0;
     padding: 0;
     transition: .5s;
+    color: #ffffff;
 }
 
 .header,
 .footer {
     background-color: rgba(127, 255, 212, 0.3);
-    height: 80px;
+    height: 90px;
     display: flex;
     align-items: center;
+}
+
+body {
+    background-image: url('./assets/bg-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header-cont {
@@ -20,20 +27,7 @@
 h1 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 300%;
-}
-
-.update-btn {
-    height: 35px;
-    width: 200px;
-    margin-left: calc(50% - 200px/2);
-    border: 1.5px solid #000;
-    background-color: transparent;
-    font-size: 20px;
-    cursor: pointer;
-    &:hover {
-        background-color: rgba(127, 255, 212, 0.2);
-    }
+    font-size: 375%;
 }
 
 .main-cont {
@@ -43,18 +37,14 @@ h1 {
 
 .calc-input {
     resize: none;
-    width: 373px;
+    width: 380px;
     height: 80px;
     background-color: rgba(127, 255, 212, 0.2);
-    border-top-style: inset;
-    border-right-style: inset;
-    border-color: rgba(54, 100, 85, 0.9);
-    border-left: 5px solid rgba(54, 100, 85, 0.9);
-    border-bottom: 5px solid rgba(54, 100, 85, 0.9);
+    border: 0;
     padding: 10px;
     font-size: 45px;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
     &:focus-visible {
         outline: none;
@@ -90,41 +80,44 @@ h1 {
 @mixin ChangeColor ($color) {
     &:hover {
         background-color: lighten($color, 10%);
+        color: lighten(#000, 2%);
     }
 }
 
 .mr {
     height: 40px;
-    background-color: #e9967a;
+    background-color: #e9967ab1;
     font-weight: 600;
-    @include ChangeColor(#e9967a);
+    @include ChangeColor(#e9967ab1);
 }
 
 .calc-btn-er {
-    background-color: #ff0033;
+    background-color: #ff0033af;
     font-weight: 600;
-    @include ChangeColor(#ff0033);
+    @include ChangeColor(#ff0033af);
 }
 
 .calc-btn-num {
-    background-color: #00cbcb;
-    font-weight: 600;
-    @include ChangeColor(#00cbcb);
+    background-color: #00cbcbb1;
+    font-weight: 900;
+    color: #000;
+    @include ChangeColor(#00cbcbb1);
 }
 
 .calc-btn-sym {
-    background-color: #7400e1;
+    background-color: #7400e1af;
     font-weight: 900;
-    @include ChangeColor(#7400e1);
+    @include ChangeColor(#7400e1af);
 }
 
 .footer-cont {
     width: 1280px;
     padding: 5px 40px;
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: space-between;
+    font-weight: 500;
 }
 
 .copyright {
@@ -132,7 +125,6 @@ h1 {
 }
 
 .name {
-    width: 307px;
     display: block;
     margin-left: auto;
 }
