@@ -56,6 +56,17 @@ h1 {
     background-color: rgba(127, 255, 212, 0.4);
 }
 
+.memory {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    color: #000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
 .rows {
     height: 70px;
     display: flex;

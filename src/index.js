@@ -148,3 +148,29 @@ calcBtnEq.addEventListener('click', () => {
     }
 });
 
+// Memory
+
+let memory = '';
+
+calcBtnMs.addEventListener('click', () => {
+    document.querySelector('.memory').style.display = 'flex';
+    let numbers = `${(calcInput.value).match(/\d{1,}/g)}`.split(',');
+    memory = numbers.at(-1);
+});
+
+calcBtnMc.addEventListener('click', () => {
+    document.querySelector('.memory').style.display = 'none';
+    memory = '';
+});
+
+calcBtnMr.addEventListener('click', () => {
+    calcInput.value += memory;
+});
+
+calcBtnMp.addEventListener('click', () => {
+    calcInput.value += `+${memory}`;
+});
+
+calcBtnMm.addEventListener('click', () => {
+    calcInput.value += `-${memory}`;
+});
