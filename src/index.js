@@ -15,6 +15,7 @@ const calcBtnMs = document.querySelector('.calc-btn-ms');
 const calcBtnMr = document.querySelector('.calc-btn-mr');
 const calcBtnMc = document.querySelector('.calc-btn-mc');
 const calcBtnBra = document.querySelectorAll('.calc-btn-bra');
+const calcBtnPOrM = document.querySelector('.calc-btn-p-or-m');
 
 calcInput.addEventListener('click', () => {
     calcInput.blur();
@@ -26,7 +27,10 @@ const check = (str) => {
     if (cISLS !== str && calcInputStr.length !== 0) {
         calcInput.value += str;
     }
-    if (cISLS == '/' || cISLS == '*' || cISLS == '+' || cISLS == '-') {
+    if (cISLS == '(' || cISLS == ')') {
+        calcInput.value += '';
+    }
+    if ((cISLS == '/' || cISLS == '*' || cISLS == '+' || cISLS == '-') && (cISLS !== '(' && cISLS !== ')')) {
         cISLS = str;
         calcInputStr = calcInputStr.slice(0, calcInputStr.length - 1);
         calcInput.value = calcInputStr.join('');
@@ -64,6 +68,9 @@ calcBtnPlus.addEventListener('click', () => {
 });
 
 calcBtnMinus.addEventListener('click', () => {
+    if (calcInput.value == 0) {
+        calcInput.value = '-';
+    }
     if (calcInput.value.length <= 13) {
         check('-');
     }

@@ -49,6 +49,8 @@ h1 {
     &:focus-visible {
         outline: none;
     }
+    display: flex;
+    justify-content: flex-end;
 }
 
 .calc-btns {
